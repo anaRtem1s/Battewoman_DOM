@@ -157,18 +157,16 @@ submitBtn.addEventListener('click', ()  => { // When the player clicks the butto
     }
   }
   
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FIX THIS PART 🛎️🛎️🛎️🛎️🛎️🛎️
-  
-  
   inputBox.value = ""; // Emptying of the input box.
   
   inputBox.focus(); // Focusing cursor on the text area of the input box.
+
+    // TO BE FIXED 🛎️🛎️🛎️🛎️🛎️🛎️
   
   myDisplay.classList.add('game-state'); 
   
   displayBox.appendChild(myDisplay);
   
-  //  ================================ OK ================
   
   displayGameState(hiddenChosenWordA, lives, inputLettersA); // Calling the function to display the current state of the game.
   
