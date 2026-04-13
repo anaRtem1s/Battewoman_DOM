@@ -11,6 +11,38 @@ img{
   height:auto;
 }
 
-body{
-  margin:0;
+@font-face {
+  font-family: 'BBB-Herthey';
+  src: url('/fonts/BBB-Herthey-Futural--15.woff2') format('woff2');
 }
+
+body{
+  margin : 0;
+  /* background: radial-gradient(circle, rgba(232, 32, 32, 1) 0%, rgba(26, 20, 20, 1) 100%); */
+  font-family: 'BBB-Herthey';
+  font-feature-settings: "liga" 1;
+
+}
+
+.container-page{
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin-right: 50%;  
+}
+
+
+.game-state{
+  width: 100px;
+  background-color: rgb(153, 184, 184);
+}
+
+.display{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1rem;
+  gap: 1rem;
+}
+
