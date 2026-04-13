@@ -1,0 +1,115 @@
+🧠 Contexte
+=-=-=-=-=-=-=
+Dans le cadre de votre apprentissage du JavaScript, vous avez acquis plusieurs compétences fondamentales :
+
+manipulation du DOM
+gestion des événements
+utilisation des conditions
+création et modification dynamique d’éléments
+gestion de l’état avec des variables
+
+L’objectif de cet exercice est de mobiliser l’ensemble de ces acquis dans un projet concret.
+
+Vous allez concevoir et développer un mini-jeu interactif fonctionnant directement dans le navigateur, sans bibliothèque externe.
+
+Ce projet vous place dans une situation proche d’un cas réel :
+👉 partir d’une idée, la structurer, la développer, puis la publier.
+
+🎯 Objectif
+=-=-=-=-=-=-=
+Créer un mini-jeu ou une expérience interactive permettant à un utilisateur de :
+
+interagir avec l’interface (clic, clavier, etc.)
+déclencher des comportements dynamiques
+observer des réactions en fonction de ses actions
+
+Le projet doit être cohérent, fonctionnel et compréhensible.
+
+
+🧩 Contraintes techniques obligatoires
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Votre projet doit impérativement intégrer les éléments suivants :
+
+1. 🖱️ Gestion des événements
+- au moins un événement click ou au clavier
+
+2. 🧠 Conditions
+- utilisation d’au moins une structure if / else
+- mise en place d’une logique (succès/échec, variation de message, évolution du jeu…)
+
+3. 🎯 Manipulation du DOM
+- affichage dynamique de contenu avec :
+   - innerText ou innerHTML
+   - modification d’au moins un élément existant
+
+4. 🧱 Création dynamique d’éléments
+- utilisation de createElement
+- insertion dans le DOM avec appendChild
+
+5. 🎭 Gestion des classes CSS
+- utilisation de classList (add, remove ou toggle)
+- impact visuel ou fonctionnel dans le jeu
+
+6. 🧠 Variables et état
+- utilisation de variables pour stocker des données
+- évolution de ces données au cours de l’exécution (score, progression, état du jeu…)
+
+7. 🧲 Bonus (facultatif mais valorisé)
+- mise en place de la délégation d’événement
+- utilisation de closest() ou matches()
+
+💡 Liberté de conception
+=-=-=-=-=-=-=-=-=-=-=-=-=
+Le choix du jeu est libre. Vous pouvez proposer par exemple :
+
+- un jeu de score
+- un quiz
+- un système de choix interactifs
+- un mini-jeu de hasard
+- un système de génération (personnage, objet…)
+
+Le plus important est la cohérence entre l’idée et son implémentation.
+
+🌐 Hébergement & versioning (obligatoire)
+
+Votre projet doit être hébergé sur GitHub.
+
+Attendus :
+création d’un repository dédié
+projet initialisé correctement (HTML / CSS / JS)
+au minimum 3 commits :
+- 1 commit initial (structure du projet)
+- 1 commit intermédiaire (fonctionnalités en cours)
+- 1 commit final (version fonctionnelle)
+
+👉 Les commits doivent être clairs et explicites (ex : “add click event”, “fix condition”, etc.)
+
+🏁 Résultat attendu
+=-=-=-=-=-=-=-=-=-=
+Votre projet doit :
+
+- être fonctionnel (aucune erreur bloquante)
+- permettre une interaction claire avec l’utilisateur
+- proposer une logique identifiable
+- être structuré de manière lisible
+- être accessible via votre repository GitHub via une Github page
+
+🎤 Présentation
+=-=-=-=-=-=-=-=-=
+À la fin de l’exercice, vous présenterez brièvement votre travail :
+
+- concept du jeu
+- règles de fonctionnement
+- choix techniques principaux
+- lien vers votre repository GitHub
+
+Le mieux c'est de viser petit et de faire grossir votre jeu progressivement : ), prévoir des choses à ajouter si vous atteignez votre objectif de base par ex 🙂
+
+Vous pourriez donc avoir plusieurs objectifs :
+
+    Objectif minimum
+    Fonctionnalité supplémentaire 1
+    Fonctionnalité supplémentaire 2
+    Fonctionnalité supplémentaire 3
+    Fonctionnalité supplémentaire 4
+    Fonctionnalité supplémentaire 5
