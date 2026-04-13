@@ -18,10 +18,11 @@ img{
 
 body{
   margin : 0;
-  /* background: radial-gradient(circle, rgba(232, 32, 32, 1) 0%, rgba(26, 20, 20, 1) 100%); */
+  background-image: radial-gradient(circle, #000000, #35101a, #661025, #98072a, #cb0026);
   font-family: 'BBB-Herthey';
   font-feature-settings: "liga" 1;
-
+  color:rgb(0, 0, 0)
+  
 }
 
 .container-page{
@@ -35,10 +36,15 @@ body{
 
 .game-state{
   width: 100px;
-  background-color: rgb(153, 184, 184);
+}
+
+.img-battewoman{
+  
+  width: 20%
 }
 
 .display{
+  background-color: rgb(214, 154, 167);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -46,3 +52,18 @@ body{
   gap: 1rem;
 }
 
+.pop-up-display{
+  
+  background-color: rgb(162, 162, 188);
+}
+
+.tried-letters{
+  
+  background-color: rgb(128, 255, 0);
+}
+
+
+.count-display{
+  
+  background-color: rgb(221, 0, 255);
+}

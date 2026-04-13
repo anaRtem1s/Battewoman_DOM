@@ -6,9 +6,7 @@
 const inputBox = document.querySelector(".input");
 const submitBtn = document.querySelector(".submit");
 const displayBox = document.querySelector(".display"); 
-const livesDisplay = document.querySelector(".count-display");
-const totalLives = document.querySelector(".total-lives");
-const triedLetters = document.querySelector(".tried-letters");
+const popUpDisplay = document.querySelector(".pop-up-display");
 
 
 // =================================
@@ -19,19 +17,19 @@ const secretWordsA = ["APOLLO", "ARTEMIS", "CHAOS", "CHRONOS", "GAIA"]; // 1. Cr
 
 let chosenWordA = chooseWord(secretWordsA); // 2. Calling of the function choosing a random word from the list.
 
-let hiddenChosenWordA = createHiddenWord(chosenWordA); // 3. Calling of the function creating a representation of the chosen word, with hidden letters as underscores.
+let hiddenChosenWordA = createHiddenWord(chosenWordA); // 3. Catching into a variable of the function creating a representation of the chosen word, with hidden letters as underscores.
 
 let lives = 6; // 4. Determination of the amount of lives / attempts allowed.
 
-let inputLettersA = []; // 5. Creation of an empty array containing the letters already tried by the player. 
+let inputLettersA = []; // 5.0. Creation of an empty array containing the letters already tried by the player. 
 
-let inputLetterValue;
+let inputLetterValue; // 5.1. Initialization of the variable that will contain the input letter.
+
 
 // =================================
 // 🎊 3. Fonctions (logique métier)
 // =================================
 
-totalLives.innerHTML = `${lives}`;
 
 function chooseWord(secretA) // 6. Creation of a function picking a word from the list.
 {
@@ -63,7 +61,6 @@ function isLetter(input) // 9. Creation of a function verifying that the player 
   return letter;
 } 
 
-
 function checkLetter(input, secret, hidden, inputList) // 10. Creation of a function verifying that the letter entered matches a letter in the word. 
 {
   let found = false;
@@ -83,97 +80,136 @@ function checkLetter(input, secret, hidden, inputList) // 10. Creation of a func
       {
       lives--;       
       
-      alert(`Nope. Be careful... She's coming for ya.
-        
-                       You'd better think twice on your next try, huh?`);
-        
-      } else 
-        {
-        inputList.push(input);
-      }
+      popUpDisplay.innerHTML = `<b>Nope! Be careful... She's coming for ya.</b>`; 
+      
+    } else 
+      {
+      inputList.push(input);
     }
   }
-  
-  
-  // !!!!!!!!!!!!!!!!! DISPLAY FUNCTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  
-  function displayGameState(hidden, lives, input) // 8. Creation of a function displaying the current state of the game to the player.
-  { 
-    displayBox.innerHTML = `<div> - Word to guess: - ${hidden.join(' ')} </div>
+}
+
+
+// !!!!!!!!!!!!!!!!! DISPLAY FUNCTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+function displayGameState(hidden, lives, input) // 8. Creation of a function displaying the current state of the game to the player.
+{ 
+  displayBox.innerHTML = `<div> - Word to guess: - ${hidden.join(' ')} </div>
   
                             <div> - You are ${lives} step(s) closer to death! </div>
   
-                            <div> - Letters already tried: ${input})</div>`;
-  }
-  
-  // =================================
-  // 🧲 4. Événements (interactions)
-  // =================================
+                            <div> - Letters already tried: ${input}</div>
+                            <div class="img-battewoman"><img src=https://media.s-bol.com/Y9VLLGQMNgrO/31956Xx/550x759.jpg   alt="battewoman"> </img> <div>`
   
   
-  displayGameState(hiddenChosenWordA, lives, inputLettersA);
+}
+
+// =================================
+// 🧲 4. Événements (interactions)
+// =================================
+
+const myDisplay = document.createElement('div'); // Creation of a display area.
+
+displayGameState(hiddenChosenWordA, lives, inputLettersA); // Calling the function to display the current state of the game.
+
+submitBtn.addEventListener('click', ()  => { // When the player clicks the button...
   
-  submitBtn.addEventListener('click', ()  => {
-    let inputLetterValue = inputBox.value.toUpperCase().trim(); // 3. Asking the player to enter a letter. 
+  let inputLetterValue = inputBox.value.toUpperCase().trim(); //  Asking the player to enter a letter, catching the input's value into a variable. 
+  
+  let checkInputLetter = !isLetter(inputLetterValue); // Calling the function checking if the input is not a letter, and if not, ask again. 
+  
+  
+  if(inputLetterValue === "") // If the input is void, asking the player to enter a letter. 
+  {    
+    popUpDisplay.innerHTML = "C'mon: ONE.LETTER.";    
     
-    let checkInputLetter = !isLetter(inputLetterValue); // 6. Calling the function to check if the input is not a letter, and if not, ask again.  
+  } else if(!isNaN(inputLetterValue) || checkInputLetter || inputLetterValue.length !== 1) // Checking if the input is a valid letter (not a number, an empty string, or another ASCII character)..
+  {  
+    popUpDisplay.innerHTML = "<b>ONE letter ONLY - from the English alphabet. You can do this, pal :]</b>";
     
-    if(inputLetterValue === "") // 4. If the input is void, asking the player to enter a letter. 
-    {    
-      displayBox.innerHTML = "C'mon: ONE.LETTER.";    
+  } else { 
+    
+    
+    if(inputLettersA.includes(inputLetterValue)) 
+      { 
+      popUpDisplay.innerHTML = `<b>FOCUS, pal! You've already tried the letter ${inputLetterValue}...</b>`; 
       
-    } else if(!isNaN(inputLetterValue) || checkInputLetter || inputLetterValue.length !== 1) // 7. Checking if the input is a valid letter (not a number, an empty string, or another ASCII character)..
-    {  
-      displayBox.innerHTML = "ONE letter ONLY - from the English alphabet. You can do this, pal :]";
+    } else {
       
-    } else { 
-      
-      
-      if(inputLettersA.includes(inputLetterValue)) 
-        { 
-        displayBox.innerHTML = `<b>FOCUS, pal! You've already tried the letter ${inputLetterValue}...</b>`; 
-      } else {
-        
-        inputLettersA.push(inputLetterValue); // 12. If it's a new letter, adding the new letter to the letters already tried.   
-      }
-      
-      checkLetter(inputLetterValue, chosenWordA, hiddenChosenWordA, inputLettersA); // 12. Calling the function verifying that the letter entered matches a letter in the word.
-      
+      inputLettersA.push(inputLetterValue); // If it's a new letter, adding the new letter to the letters already tried.   
     }
     
+    checkLetter(inputLetterValue, chosenWordA, hiddenChosenWordA, inputLettersA); //Calling the function verifying that the letter entered matches a letter in the word.
     
-    
-    // !!!!CREATION OF THE DISPLAY / GAME STATE AREA AND MESSAGES!!!
-    
-    const myDisplay = document.createElement('div'); // Creation of a display area.
-    
-    myDisplay.innerHTML = `<div class="img-battewoman"><img src=https://media.s-bol.com/Y9VLLGQMNgrO/31956Xx/550x759.jpg alt="battewoman"> </img> <div>
+  }
   
-      <div>Letters already tried: ${inputLetterValue} !</div> `;
-    
-    
-    myDisplay.classList.add('game-state');
-    
-   
-    displayBox.appendChild(myDisplay);
-    
-    // FONCTION DE DISPLAY
-    
-    inputBox.value = "";
-    inputBox.focus();
-    
-    totalLives.innerHTML = `${lives}`;
-    inputBox.select(); 
-    
-    livesDisplay.innerHTML = `${lives}`;
-    triedLetters.innerHTML = `${inputLettersA}`;
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FIX THIS PART 🛎️🛎️🛎️🛎️🛎️🛎️
+  
+  
+  
+  inputBox.value = ""; // Emptying of the input box.
+  
+  inputBox.focus(); // Focusing cursor on the text area of the input box.
+  
+  
+  
+  
+  myDisplay.classList.add('game-state'); 
+  
+  displayBox.appendChild(myDisplay);
+  
+  //  ================================ OK ================
+  
+  displayGameState(hiddenChosenWordA, lives, inputLettersA); // Calling the function to display the current state of the game.
+  
+});
 
-  });
-  
-  
-  
-  
-  
-  
-  
-  
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FIX THIS PART 🛎️🛎️🛎️🛎️🛎️🛎️
+
+function checkVictory(lives) // 16. Creation of a function verifying if the player won or lost the game.
+{ 
+  if(lives > 0 && hiddenChosenWordA.indexOf('_') !== -1)  
+    {
+    
+    popUpDisplay.innerHTML = `C0ngr4tZ! You found the word (${chosenWordA}) AND are still alive - Lives left: ${lives}!`;
+    
+  } else 
+    {
+    
+    popUpDisplay.innerHTML = `G4m3 0v4... 
+      
+                           U = dead. 
+    
+                           The word was: ${chosenWordA}. 
+    
+                           But who's gonna care now, hm?`; 
+  }
+}
+
+
+// const endingGame = () => { // 14. Creation of an arrow function ending the game.
+
+
+checkVictory(lives); // 17. Calling the function verifying if the player won or lost the game.
+
+
+
+// checkVictory(lives); // 17. Calling the function verifying if the player won or lost the game.
+
+// endingGame(); // 18. Calling the function ending the game.
+
+
+
+// goodGame(); // Launching the game.
+
+
+// !!!!!!!!!!!!!!!!!!!!!! A IMPLEMENTER   ⚡⚡⚡⚡⚡
+
+
+// - mise en place de la délégation d’événement  - utilisation de closest() ou matches()
+
+// temp display for pop up
+
+// main game loop
+
+// EVENT LISTENER CLAVIER
