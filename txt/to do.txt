@@ -1,0 +1,34 @@
+
+// !!!!!!!!!!!!!!!!!!!!! FIX THIS PART 🛎️🛎️🛎️🛎️🛎️🛎️
+
+
+
+
+// const endingGame = () => { // 14. Creation of an arrow function ending the game.
+
+
+
+
+// ⚡⚡⚡⚡⚡ TO IMPLEMENT ⚡⚡⚡⚡⚡
+
+// goodGame(); // Launching the game.
+
+
+
+//when games ends, display:none on the input // display a coffin image? or battewoman image --> avec une classList.add ? deleg event ?
+
+
+// - mise en place de la délégation d’événement  - utilisation de closest() ou matches()
+
+// temp display for pop up
+
+
+// EVENT LISTENER KEYBOARD
+
+// MAKE IT RESPONSIVE
+
+// EVOLVING PHOTOS + BATTEWOMAN IN THE TITLE / SHE'S COMING FOR YA
+
+// CREATE A FUNCTION TO WRAP THE INVALID INPUTS
+
+// Game over : Improve display
