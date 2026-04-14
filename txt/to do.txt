@@ -9,8 +9,6 @@
 
 // mise en place de la délégation d’événement  - utilisation de closest() ou matches()
 
-// EVENT LISTENER KEYBOARD
-
 // MAKE IT RESPONSIVE
 
 // EVOLVING PHOTOS + BATTEWOMAN IN THE TITLE / SHE'S COMING FOR YA

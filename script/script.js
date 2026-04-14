@@ -127,7 +127,8 @@ const myDisplay = document.createElement('div'); // Creation of a display area.
 
 displayGameState(hiddenChosenWordA, lives, inputLettersA); // Calling the function to display the current state of the game.
 
-submitBtn.addEventListener('click', ()  => { // When the player clicks the button...
+submitBtn.addEventListener('click', function(e) {
+  e.preventDefault();  // When the player clicks the button/ hits "Enter'"...
   
   let inputLetterValue = inputBox.value.toUpperCase().trim(); //  Asking the player to enter a letter, catching the input's value into a variable. 
   
