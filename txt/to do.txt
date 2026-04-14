@@ -1,26 +1,28 @@
 
 // ⚡⚡⚡⚡⚡ TO IMPLEMENT ⚡⚡⚡⚡⚡
 
-// goodGame(); // Launching the game.
 
 // const endingGame = () =>  // Creation of an arrow function ending the game.
 
-//when games ends, display:none on the input // display a coffin image? or battewoman image --> avec une classList.add ? deleg event ?
+// CREATE FUNCTIONS - GROUP - LESS IS MORE
 
 // mise en place de la délégation d’événement  - utilisation de closest() ou matches()
 
 // MAKE IT RESPONSIVE
 
-// EVOLVING PHOTOS + BATTEWOMAN IN THE TITLE / SHE'S COMING FOR YA
+// EVOLVING IMAGES + BATTEWOMAN IMG IN THE TITLE / SHE'S COMING FOR YA
 
 // CREATE A FUNCTION TO WRAP THE INVALID INPUTS
 
-// Game over : Improve display
+// Game over : Improve display - MAKE THINGS DISAPPEAR
 
-// evolutive images
+//
 
 
-// Real God.desses 
-// Bonus: best god.esse.s
- // Other branch of repo 
- // Other versions: phrase / how will she kill?
+
+
+// ::BONUS::
+
+// Best god.esse.s
+/// Other branch of repo 
+/// Other versions: phrase / how will she kill?

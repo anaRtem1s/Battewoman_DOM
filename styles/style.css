@@ -27,7 +27,7 @@ body{
   font-weight: bolder;
 }
 
-.container-page{
+#container-page{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,18 +36,20 @@ body{
   padding: 20px;
 }
 
-.form-container{
+.container-form{
   display: flex;
-  gap: 1rem;
+  gap:15px;
 }
 
-
-.game-state{
-  width: 100px;
+.container-display{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 }
 
 .img-battewoman{
-  
   width: 20%
 }
 
@@ -61,7 +63,39 @@ body{
   gap: 1rem;
   padding: 20px;
 }
-/* 
-.pop-up-display{
 
-} */
+.pop-up-display{
+  padding: 20px;
+}
+
+.disappear-end{
+  display:none;  
+}  
+
+.input{
+  background-color: #410101;
+  border-radius: 5px;
+  padding:5px;
+  color:white;
+}
+
+.input::placeholder{
+  color: rgb(199, 6, 6);
+  font-size:small;
+  font-style: oblique;
+}
+
+.submit{
+  background-color: #661025;
+  border-radius: 5px;
+  padding:5px;
+  color:white;
+}
+
+.killing-bat{
+  margin-top: 10px;
+  width: 50%;
+}
+
+
+
