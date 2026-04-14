@@ -2,6 +2,7 @@
 // ⚡⚡⚡⚡⚡ TO IMPLEMENT ⚡⚡⚡⚡⚡
 
 // goodGame(); // Launching the game.
+
 // const endingGame = () =>  // Creation of an arrow function ending the game.
 
 //when games ends, display:none on the input // display a coffin image? or battewoman image --> avec une classList.add ? deleg event ?
@@ -17,3 +18,11 @@
 // CREATE A FUNCTION TO WRAP THE INVALID INPUTS
 
 // Game over : Improve display
+
+// evolutive images
+
+
+// Real God.desses 
+// Bonus: best god.esse.s
+ // Other branch of repo 
+ // Other versions: phrase / how will she kill?
